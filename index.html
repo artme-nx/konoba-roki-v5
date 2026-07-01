@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<title>Konoba Roki — riba s gradela i domaća kuhinja, Vodice</title>
+<meta name="description" content="Konoba Roki u Vodicama: svježa riba s gradela na maslinovini, brudet, hobotnica ispod peke i domaći crni. Obiteljski stol nad morem, u sjeni bora. Rezervirajte stol.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://artme-nx.github.io/konoba-roki-v5/">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Konoba Roki — Vodice">
+<meta property="og:description" content="Riba s gradela, brudet i domaći crni. Obiteljski stol nad morem, u sjeni bora. Vodice, Dalmacija.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1665401015549-712c0dc5ef85?auto=format&fit=crop&w=1200&h=630&q=70">
+<meta property="og:locale" content="hr_HR">
+<meta name="theme-color" content="#3B4A38">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Konoba Roki",
+  "image": "https://images.unsplash.com/photo-1665401015549-712c0dc5ef85?auto=format&fit=crop&w=1200&q=70",
+  "@id": "https://artme-nx.github.io/konoba-roki-v5/",
+  "url": "https://artme-nx.github.io/konoba-roki-v5/",
+  "telephone": "+385 98 810 622",
+  "servesCuisine": ["Dalmatinska", "Mediteranska", "Riblji specijaliteti"],
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vodice",
+    "addressRegion": "Šibensko-kninska županija",
+    "addressCountry": "HR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": "43.7589", "longitude": "15.7783" },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "12:00", "closes": "24:00"
+  }]
+}
+</script>
+<style>
+/* ==== Karakter palete: "Bor, vapnenac i žar" — Konoba Roki, Vodice (v5) ==== */
+:root{
+  --bg-base:#ECE6D8;      /* izbijeljeni dalmatinski vapnenac */
+  --bg-alt:#E4DDCB;       /* osjenčani suhozid */
+  --ink:#1C231D;          /* Jadran-bor u sumrak */
+  --pine:#3B4A38;         /* alepski bor — vodeći akcent */
+  --pine-soft:#59684F;    /* svjetliji bor — label/eyebrow */
+  --ember:#9A4327;        /* žar s gradela + domaći crni — CTA */
+  --ember-deep:#7f3720;
+  --stone:#8A8272;        /* muted vapnenac — dekor, NE body */
+  --spring:#6E8E86;       /* izvor-akvamarin (ime "Vodice") — šapat */
+  --paper:#F5F1E6;        /* tekst na tamnom / gumbu */
+  --font-display:'EB Garamond', Georgia, serif;
+  --font-body:'Work Sans', system-ui, sans-serif;
+  --maxw:1200px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg-base);color:var(--ink);
+  font-family:var(--font-body);font-weight:400;font-size:17px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;line-height:1.08;margin:0;letter-spacing:.005em}
+p{margin:0 0 1.1em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,5vw,56px)}
+.eyebrow{font-family:var(--font-body);text-transform:uppercase;letter-spacing:.2em;
+  font-size:11px;font-weight:600;color:var(--pine-soft)}
+.section{padding-block:clamp(64px,9vw,128px)}
+.section--alt{background:var(--bg-alt)}
+.section--ink{background:var(--ink);color:var(--paper)}
+.section--ink .eyebrow{color:var(--spring)}
+
+/* reveal robusnost: gejtaj samo kad JS radi */
+.js [data-reveal]{opacity:0;transform:translateY(18px)}
+[data-reveal]{transition:opacity .8s var(--ease), transform .8s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+.js [data-split] .wl{opacity:0}
+
+/* ---- vodica potpis (izvor + borova iglica) ---- */
+.vodica{width:44px;height:44px;flex:0 0 auto}
+.vodica .rip{fill:none;stroke:currentColor;stroke-width:1.4;opacity:.9}
+.vodica .pine{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round}
+.divider{display:flex;align-items:center;justify-content:center;gap:18px;color:var(--pine);
+  padding-block:clamp(28px,5vw,56px)}
+.divider::before,.divider::after{content:"";height:1px;width:min(120px,20vw);
+  background:linear-gradient(90deg,transparent,var(--stone))}
+.divider::after{background:linear-gradient(90deg,var(--stone),transparent)}
+.js .divider .rip,.js .divider .pine{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
+  transition:stroke-dashoffset 1.4s var(--ease)}
+.js .divider.in .rip,.js .divider.in .pine{stroke-dashoffset:0}
+
+/* ---- header ---- */
+header{position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px clamp(20px,5vw,56px);
+  background:transparent;transition:background .4s var(--ease),color .4s var(--ease),box-shadow .4s var(--ease)}
+header:not(.solid)::before{content:"";position:absolute;inset:0 0 auto 0;height:150%;z-index:-1;
+  background:linear-gradient(180deg,rgba(20,26,21,.42),rgba(20,26,21,0));pointer-events:none}
+header.solid{background:color-mix(in srgb,var(--bg-base) 92%,transparent);
+  backdrop-filter:blur(9px);box-shadow:0 1px 0 rgba(28,35,29,.09)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--pine)}
+header:not(.solid) .brand{color:var(--paper)}
+.brand .name{font-family:var(--font-display);font-size:23px;font-weight:600;letter-spacing:.02em;line-height:1}
+.brand .name small{display:block;font-family:var(--font-body);font-size:9.5px;font-weight:600;
+  letter-spacing:.34em;text-transform:uppercase;opacity:.72;margin-top:3px}
+nav.main{display:flex;align-items:center;gap:30px}
+nav.main a.lnk{font-size:13px;font-weight:500;letter-spacing:.04em;position:relative;
+  color:var(--paper)}
+header.solid nav.main a.lnk{color:var(--ink)}
+nav.main a.lnk::after{content:"";position:absolute;left:0;bottom:-5px;height:1.5px;width:100%;
+  background:var(--ember);background-size:0% 100%;background-repeat:no-repeat;
+  transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+nav.main a.lnk:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--font-body);
+  font-size:13px;font-weight:600;letter-spacing:.05em;padding:12px 22px;border-radius:2px;
+  background:var(--ember);color:var(--paper);border:1px solid var(--ember);cursor:pointer;
+  transition:background .3s var(--ease),transform .3s var(--ease)}
+.btn:hover{background:var(--ember-deep);transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--pine);border-color:color-mix(in srgb,var(--pine) 45%,transparent)}
+header:not(.solid) .btn--ghost{color:var(--paper);border-color:rgba(245,241,230,.5)}
+.btn--ghost:hover{background:transparent;border-color:var(--ember);color:var(--ember)}
+.menu-toggle{display:none}
+
+/* ---- hero: 4-image editorial grid ---- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding-bottom:clamp(40px,7vw,80px)}
+.hero-grid{position:absolute;inset:0;display:grid;
+  grid-template-columns:1.25fr 1fr;grid-template-rows:1.1fr 1fr;gap:6px;z-index:0}
+.hero-grid figure{margin:0;overflow:hidden;position:relative}
+.hero-grid img{width:100%;height:100%;object-fit:cover;
+  animation:breath 20s var(--ease) infinite alternate}
+.hero-grid figure:nth-child(2) img{animation-delay:-6s}
+.hero-grid figure:nth-child(3) img{animation-delay:-11s}
+.hero-grid figure:nth-child(4) img{animation-delay:-16s}
+@keyframes breath{from{transform:scale(1.0)}to{transform:scale(1.055)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(28,35,29,.34) 0%,rgba(28,35,29,.10) 26%,rgba(28,35,29,.34) 62%,rgba(28,35,29,.90) 100%)}
+.hero .wrap{position:relative;z-index:2;color:var(--paper);width:100%;max-width:min(880px,92vw);
+  margin-inline:0;padding-left:clamp(20px,5vw,56px)}
+.hero .wrap::before{content:"";position:absolute;left:-8vw;right:-6vw;top:-30px;bottom:-30px;z-index:-1;
+  background:radial-gradient(125% 135% at 22% 78%, rgba(18,24,19,.62), rgba(18,24,19,0) 68%);pointer-events:none}
+.hero .btn--ghost{color:var(--paper);border-color:rgba(245,241,230,.62)}
+.hero .btn--ghost:hover{background:transparent;border-color:var(--ember);color:#fff}
+.hero .eyebrow{color:var(--paper);opacity:.94;display:flex;align-items:center;gap:12px;
+  text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.hero .eyebrow .vodica{width:30px;height:30px}
+.hero h1{font-size:clamp(38px,5.4vw,66px);font-weight:500;margin:.34em 0 .5em;
+  max-width:20ch;text-shadow:0 2px 34px rgba(0,0,0,.42)}
+.hero h1 em{font-style:italic;color:#EBD9C6}
+.hero .lead{font-size:clamp(16px,1.85vw,20px);max-width:50ch;font-weight:400;
+  color:#F3EEE2;margin-bottom:1.7em;text-shadow:0 1px 18px rgba(0,0,0,.6)}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.scrollhint{margin-top:clamp(28px,4vw,44px);font-size:11px;letter-spacing:.28em;
+  text-transform:uppercase;opacity:.8;display:flex;align-items:center;gap:10px}
+.scrollhint .ln{width:34px;height:1px;background:var(--paper);position:relative;overflow:hidden}
+.scrollhint .ln::after{content:"";position:absolute;inset:0;background:var(--ember);
+  animation:slide 2.4s var(--ease) infinite}
+@keyframes slide{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+
+/* ---- manifest ---- */
+.manifest{text-align:center}
+.manifest .lede{font-family:var(--font-display);font-size:clamp(23px,3.2vw,34px);
+  line-height:1.32;font-weight:400;max-width:19ch;margin:.5em auto .2em;color:var(--pine)}
+.manifest p.body{max-width:60ch;margin-inline:auto;color:var(--ink)}
+.manifest .sign{font-family:var(--font-display);font-style:italic;font-size:20px;color:var(--ember);margin-top:1.4em}
+
+/* section head */
+.shead{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(36px,5vw,60px);max-width:60ch}
+.shead h2{font-size:clamp(32px,5vw,54px);font-weight:500}
+.shead.center{align-items:center;text-align:center;margin-inline:auto}
+
+/* ---- jelovnik ---- */
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(36px,6vw,72px)}
+.menu-cat h3{font-size:26px;color:var(--pine);margin-bottom:6px;display:flex;align-items:baseline;gap:12px}
+.menu-cat h3 span{flex:1;height:1px;background:color-mix(in srgb,var(--stone) 60%,transparent)}
+.menu-cat .sub{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--pine-soft);
+  font-weight:600;margin-bottom:22px;display:block}
+.dish{padding:14px 0;border-bottom:1px solid color-mix(in srgb,var(--stone) 34%,transparent)}
+.dish:last-child{border-bottom:0}
+.dish .n{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--ink)}
+.dish .d{font-size:14.5px;color:#4a5347;margin-top:3px;max-width:46ch}
+.menu-note{margin-top:clamp(30px,4vw,48px);display:flex;flex-wrap:wrap;gap:16px 28px;
+  align-items:center;justify-content:space-between}
+.menu-note p{font-size:14px;color:var(--pine-soft);max-width:62ch;margin:0}
+
+/* ---- priča split ---- */
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.split .media{overflow:hidden;border-radius:2px}
+.split .media img{width:100%;height:100%;min-height:340px;object-fit:cover;
+  filter:sepia(.14) contrast(1.04) saturate(.95)}
+.split .txt h2{font-size:clamp(30px,4.4vw,48px);margin-bottom:.5em;color:var(--paper)}
+.split .txt .body{color:#d9d3c4}
+.split .txt .body strong{color:var(--paper);font-weight:500}
+.facts{display:flex;gap:36px;margin-top:28px;flex-wrap:wrap}
+.facts .f .num{font-family:var(--font-display);font-size:38px;color:var(--spring);line-height:1}
+.facts .f .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b9c2b3;margin-top:6px}
+
+/* ---- galerija ---- */
+.gal{columns:3;column-gap:8px}
+.gal figure{margin:0 0 8px;overflow:hidden;break-inside:avoid;position:relative;border-radius:2px}
+.gal img{width:100%;filter:sepia(.18) contrast(1.05) saturate(.92);transition:filter .6s var(--ease),transform 1s var(--ease)}
+.gal figure:hover img{filter:sepia(0) contrast(1.02) saturate(1.02);transform:scale(1.03)}
+.gal figcaption{position:absolute;left:12px;bottom:10px;color:var(--paper);font-size:12px;
+  letter-spacing:.08em;text-shadow:0 1px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s var(--ease)}
+.gal figure:hover figcaption{opacity:1}
+
+/* ---- rezervacije + lokacija ---- */
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:start}
+.res-card{background:var(--bg-base);border:1px solid color-mix(in srgb,var(--stone) 40%,transparent);
+  border-radius:3px;padding:clamp(24px,3.5vw,40px)}
+.res-card h3{font-size:26px;color:var(--pine);margin-bottom:.4em}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--pine-soft);font-weight:600;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font-family:var(--font-body);font-size:15px;
+  padding:11px 13px;border:1px solid color-mix(in srgb,var(--stone) 55%,transparent);
+  border-radius:2px;background:var(--paper);color:var(--ink);transition:border-color .3s var(--ease)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pine);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--pine) 16%,transparent)}
+.field.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field input[aria-invalid="true"]{border-color:var(--ember);background:color-mix(in srgb,var(--ember) 6%,var(--paper))}
+.form-status{font-size:14px;margin:14px 0 0;padding:12px 14px;border-radius:2px;line-height:1.5}
+.form-status.err{background:color-mix(in srgb,var(--ember) 10%,var(--paper));
+  border:1px solid color-mix(in srgb,var(--ember) 45%,transparent);color:var(--ember-deep)}
+.form-status.ok{background:color-mix(in srgb,var(--pine) 9%,var(--paper));
+  border:1px solid color-mix(in srgb,var(--pine) 40%,transparent);color:var(--pine)}
+.form-status.ok a{color:var(--ember);font-weight:600}
+.form-hint{font-size:12.5px;color:var(--pine-soft);margin:12px 0 0}
+.contact-list{list-style:none;padding:0;margin:0 0 22px}
+.contact-list li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid color-mix(in srgb,var(--stone) 30%,transparent);align-items:baseline}
+.contact-list .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pine-soft);
+  font-weight:600;min-width:96px}
+.contact-list .v{font-size:16px}
+.contact-list .v a:hover{color:var(--ember)}
+.map-embed{margin-top:6px;border-radius:3px;overflow:hidden;border:1px solid color-mix(in srgb,var(--stone) 40%,transparent)}
+.map-embed iframe{display:block;width:100%;height:300px;border:0;filter:grayscale(.25) sepia(.08)}
+.hours{list-style:none;padding:0;margin:6px 0 0}
+.hours li{display:flex;justify-content:space-between;padding:7px 0;font-size:15px;
+  border-bottom:1px solid color-mix(in srgb,var(--stone) 26%,transparent)}
+.hours li span:last-child{color:var(--pine-soft)}
+
+/* ---- footer ---- */
+footer{background:var(--ink);color:#cfd6c9;padding-block:clamp(48px,7vw,88px)}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--font-display);font-size:24px;color:var(--paper);margin-bottom:.5em}
+footer .brand-line{display:flex;align-items:center;gap:12px;color:var(--spring);margin-bottom:14px}
+footer a:hover{color:var(--paper)}
+footer .muted{font-size:13.5px;color:#9aa394;max-width:34ch}
+footer ul{list-style:none;padding:0;margin:0;font-size:14.5px;line-height:2.1}
+.foot-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine-soft);
+  font-weight:600;margin-bottom:14px}
+.colophon{margin-top:clamp(36px,5vw,60px);padding-top:22px;
+  border-top:1px solid rgba(207,214,201,.16);display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;font-size:12.5px;color:#8b937f}
+
+/* ---- mobilni ---- */
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+  .menu-grid{grid-template-columns:1fr;gap:44px}
+  .split{grid-template-columns:1fr}
+  .split .media{order:-1}
+  .res-grid{grid-template-columns:1fr}
+  .gal{columns:2}
+  footer .cols{grid-template-columns:1fr;gap:32px}
+  nav.main{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:26px;
+    background:var(--ink);transform:translateX(100%);transition:transform .5s var(--ease);z-index:55}
+  nav.main.open{transform:none}
+  nav.main a.lnk,header.solid nav.main a.lnk{color:var(--paper);font-size:20px;font-family:var(--font-display)}
+  nav.main .btn{font-size:15px}
+  .menu-toggle{display:inline-flex;z-index:60;background:none;border:0;cursor:pointer;
+    flex-direction:column;gap:5px;padding:6px}
+  .menu-toggle span{width:26px;height:2px;background:var(--paper);transition:.3s var(--ease)}
+  header.solid .menu-toggle span{background:var(--ink)}
+  nav.main.open ~ .menu-toggle span,.menu-toggle.x span{background:var(--paper)}
+  .menu-toggle.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-toggle.x span:nth-child(2){opacity:0}
+  .menu-toggle.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .hero h1{font-size:clamp(36px,10vw,60px)}
+}
+@media(max-width:860px){
+  .hero .wrap::before{left:-6vw;right:-6vw;top:-40px;bottom:-40px;
+    background:linear-gradient(180deg,rgba(18,24,19,0) 0%,rgba(18,24,19,.5) 34%,rgba(18,24,19,.72) 100%)}
+  .field.two{grid-template-columns:1fr}
+}
+@media(max-width:560px){.gal{columns:1}.facts{gap:24px}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .js [data-reveal]{opacity:1;transform:none}
+  .js [data-split] .wl{opacity:1}
+  .hero-grid img{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- vodica potpis: definicija (izvor + borova iglica) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vodica" viewBox="0 0 48 48">
+    <path class="rip" style="--len:70" d="M24 34a10 10 0 0 1 20 0" transform="rotate(180 24 24)"/>
+    <path class="rip" style="--len:46" d="M24 30a7 7 0 0 1 14 0" transform="rotate(180 24 24)"/>
+    <path class="rip" style="--len:24" d="M24 26a4 4 0 0 1 8 0" transform="rotate(180 24 24)"/>
+    <path class="pine" style="--len:22" d="M24 8v16"/>
+    <path class="pine" style="--len:10" d="M24 13l-5-3M24 13l5-3M24 18l-5-3M24 18l5-3"/>
+  </symbol>
+</svg>
+
+<header id="hdr">
+  <a class="brand" href="#top" aria-label="Konoba Roki — početak">
+    <svg class="vodica"><use href="#vodica"/></svg>
+    <span class="name">Konoba Roki<small>Vodice · Dalmacija</small></span>
+  </a>
+  <nav class="main" id="nav">
+    <a class="lnk" href="#prica">Priča</a>
+    <a class="lnk" href="#jelovnik">Jelovnik</a>
+    <a class="lnk" href="#ambijent">Ambijent</a>
+    <a class="lnk" href="#kontakt">Kontakt</a>
+    <a class="btn" href="#rezervacija">Rezerviraj stol</a>
+  </nav>
+  <button class="menu-toggle" id="mtog" aria-label="Izbornik" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero-grid" aria-hidden="false">
+    <figure><img src="https://images.unsplash.com/photo-1665401015549-712c0dc5ef85?auto=format&fit=crop&w=1300&q=72" alt="Cijela riba pečena na gradelama, s limunom i rajčicom, u konobi Roki u Vodicama" width="1300" height="900" loading="eager" fetchpriority="high"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1515037609796-8a12ca603d7d?auto=format&fit=crop&w=900&q=70" alt="Kozice i plodovi mora na žaru od maslinovine" width="900" height="820" loading="eager"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=70" alt="Terasa konobe nad mirnom uvalom Jadranskog mora" width="900" height="820" loading="eager"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1606384705629-33ee52ad3125?auto=format&fit=crop&w=900&q=70" alt="Ribarske barke u vodičkoj luci ispod kamenog priobalja" width="900" height="700" loading="eager"></figure>
+  </div>
+  <div class="wrap">
+    <span class="eyebrow"><svg class="vodica"><use href="#vodica"/></svg> Svježa riba · žar od maslinovine</span>
+    <h1>Riba jutros u moru.<br>Navečer <em>na vašem stolu.</em></h1>
+    <p class="lead">Kod Rokija se ne izmišlja. Ono što ribari izvuku iz kanala ujutro, popodne već miriše s gradela na maslinovini. Stol pod borom, more na dohvat, i crni koji zna odakle je.</p>
+    <div class="cta-row">
+      <a class="btn" href="#rezervacija">Rezerviraj stol</a>
+      <a class="btn btn--ghost" href="#jelovnik">Pogledaj jelovnik</a>
+    </div>
+    <div class="scrollhint"><span class="ln"></span> Skrolaj niz obalu</div>
+  </div>
+</section>
+
+<!-- ================= MANIFEST ================= -->
+<section class="section manifest wrap" id="manifest">
+  <span class="eyebrow">Naša mjera</span>
+  <p class="lede">More daje ritam, bor daje hlad, a žar daje ostalo.</p>
+  <p class="body">Vodice su ime dobile po izvorima slatke vode što probijaju tik uz slanu, po <em>vodicama</em>. Tu smo i mi: između kamena i mora, u sjeni alepskog bora koji se spušta do uvale. Kuhinja nam je kratka i poštena: sol, ulje, vatra i strpljenje. Ne tražite ovdje pjenu i pincetu; tražite ribu koja se jutros koprcala i kruh koji upija sok s tanjura.</p>
+  <p class="sign">— obitelj Roki</p>
+</section>
+
+<div class="divider wrap"><svg class="vodica" style="width:40px;height:40px"><use href="#vodica"/></svg></div>
+
+<!-- ================= JELOVNIK ================= -->
+<section class="section section--alt" id="jelovnik">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Jelovnik · sezonski</span>
+      <h2 data-split>Sve što more da, i malo s kopna</h2>
+      <p>Jelovnik se mijenja s ulovom i s godišnjim dobom; ono što niže piše naša je stalna okosnica. Za ribu vas najbolje posluži dnevna ponuda, jer nju bira more, ne mi.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <h3>S mora <span></span></h3>
+        <span class="sub">Riba, školjke, glavonošci</span>
+        <div class="dish"><div class="n">Brudet od bijele ribe</div><div class="d">Više vrsta ribe iz jutarnjeg ulova, dinstane na crvenom luku i vinu, uz žutu palentu.</div></div>
+        <div class="dish"><div class="n">Crni rižot sa sipom</div><div class="d">Sipa i njezino crnilo, mladi luk, kap maslinova ulja i pola žlice svježeg peršina.</div></div>
+        <div class="dish"><div class="n">Salata od hobotnice</div><div class="d">Hobotnica s gradela, mladi krumpir, kapari, crveni luk, ocat i ulje s brda iznad Vodica.</div></div>
+        <div class="dish"><div class="n">Školjke na buzaru</div><div class="d">Dagnje i kunjke <!-- TODO[klijent]: potvrditi koje školjke redovno imate -->u bijelom vinu i češnjaku, s prepečencem.</div></div>
+      </div>
+      <div class="menu-cat">
+        <h3>S gradela <span></span></h3>
+        <span class="sub">Na žaru od maslinovine</span>
+        <div class="dish"><div class="n">Riba dana s gradela</div><div class="d">Cijela riba pečena na maslinovini, blitva s krumpirom, limun i kap ulja, koliko ulov da.</div></div>
+        <div class="dish"><div class="n">Kozice na žaru</div><div class="d">Velike kozice, češnjak, ružmarin i malo bijelog vina; jedu se rukama, kako i treba.</div></div>
+        <div class="dish"><div class="n">Rebarca i kotlet</div><div class="d">Meso s roštilja <!-- TODO[klijent]: navesti OPG / dobavljača mesa -->uz pečeni krumpir i sezonski prilog.</div></div>
+        <div class="dish"><div class="n">Dalmatinska plata za dvoje</div><div class="d">Domaći pršut, sir iz mišine, slane srdele, masline i kapari: za početak ili za cijelu večer uz vino.</div></div>
+      </div>
+      <div class="menu-cat">
+        <h3>Iz konobe <span></span></h3>
+        <span class="sub">Sporo kuhano, po starom</span>
+        <div class="dish"><div class="n">Pašticada s njokima</div><div class="d">Govedina marinirana dva dana u octu i vinu, dinstana s suhim šljivama; domaći njoki.</div></div>
+        <div class="dish"><div class="n">Janjetina ispod peke</div><div class="d">Janjetina i krumpir ispod peke; najavite dan ranije, peka ne trpi žurbu.</div></div>
+        <div class="dish"><div class="n">Marenda za stolom</div><div class="d">Ono što se toga dana kuhalo za nas; pitajte konobara, obično je najbolje.</div></div>
+      </div>
+      <div class="menu-cat">
+        <h3>Slatko i vino <span></span></h3>
+        <span class="sub">Kraj koji se pamti</span>
+        <div class="dish"><div class="n">Rožata</div><div class="d">Domaća rožata s karamelom, po receptu koji se u kući ne mijenja.</div></div>
+        <div class="dish"><div class="n">Smokve u prošeku</div><div class="d">Sušene smokve namočene u domaćem prošeku, s mrvom badema.</div></div>
+        <div class="dish"><div class="n">Domaći crni i bijeli</div><div class="d">Crni babićeva soja s obale i svjež debit, vino koje zna odakle je i uz što ide.</div></div>
+      </div>
+    </div>
+    <div class="menu-note">
+      <p>Alergeni i sastav svakog jela rado ćemo vam reći za stolom. Za veće društvo i posebne želje javite se ranije i spremit ćemo i ono čega nema na papiru.</p>
+      <a class="btn btn--ghost" href="tel:+38598810622">Pitaj za dnevnu ponudu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRIČA (split, ink) ================= -->
+<section class="section section--ink" id="prica">
+  <div class="wrap split">
+    <div class="media" data-reveal>
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=72" alt="Meso i riba na otvorenom žaru, ruka koja okreće gradele u konobi Roki" width="1000" height="1100" loading="lazy">
+    </div>
+    <div class="txt">
+      <span class="eyebrow">Naša priča</span>
+      <h2 data-split>Roki je nadimak, a ne marketing</h2>
+      <p class="body"><strong>Konoba nosi obiteljski nadimak</strong>, onaj kojim su djeda zvali na rivi i koji je ostao na vratima kad smo otvorili svoja. Počelo je s barkom, mrežom i jednim kaminom; ostalo je s istim mirom i puno više stolova.</p>
+      <p class="body">Ribu biramo na rivi, ulje cijedimo iz maslina iznad mjesta, a vino držimo domaće jer gostu ne treba etiketa nego istina u čaši. Za gradelama najčešće stoji netko od naših, jer žar se ne prepušta strancu.</p>
+      <div class="facts">
+        <div class="f"><div class="num">3</div><div class="lbl">generacije za istim stolom<!-- TODO[klijent]: potvrditi broj generacija --></div></div>
+        <div class="f"><div class="num">0</div><div class="lbl">smrznute ribe u kuhinji</div></div>
+        <div class="f"><div class="num">100m</div><div class="lbl">od mora do tanjura</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AMBIJENT / GALERIJA ================= -->
+<section class="section" id="ambijent">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow">Ambijent</span>
+      <h2 data-split>Stol pod borom, more na dohvat</h2>
+      <p>Konoba je onakva kakva i treba biti: kamen, drvo, bijeli stolnjak samo kad se slavi. Ljeti se jede vani, u hladu; zimi uz kamin, uz čašu crnog i priču koja se ne žuri.</p>
+    </div>
+    <div class="gal">
+      <figure data-reveal><img src="https://images.unsplash.com/photo-1606850780554-b55ea4dd0b70?auto=format&fit=crop&w=760&q=70" alt="Plata plodova mora: hobotnica, škampi i školjke na dasci" loading="lazy" width="760" height="507"><figcaption>Plata iz mora</figcaption></figure>
+      <figure data-reveal><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=760&q=70" alt="Terasa konobe Roki nad morem u Vodicama" loading="lazy" width="760" height="900"><figcaption>Terasa nad uvalom</figcaption></figure>
+      <figure data-reveal><img src="https://images.unsplash.com/photo-1582536446725-5ad9e6ef0535?auto=format&fit=crop&w=760&q=70" alt="Domaći kruh, maslinovo ulje i masline" loading="lazy" width="760" height="600"><figcaption>Ulje s naših maslina</figcaption></figure>
+      <figure data-reveal><img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=760&q=70" alt="Riba s gradela s limunom i ružmarinom na tanjuru" loading="lazy" width="760" height="507"><figcaption>S gradela</figcaption></figure>
+      <figure data-reveal><img src="https://images.unsplash.com/photo-1519010135229-1f2e4523b3c7?auto=format&fit=crop&w=760&q=70" alt="Čaša domaćeg crnog vina na drvenom stolu" loading="lazy" width="760" height="900"><figcaption>Domaći crni</figcaption></figure>
+      <figure data-reveal><img src="https://images.unsplash.com/photo-1594973338928-5514e8cbb557?auto=format&fit=crop&w=760&q=70" alt="Brudet od hobotnice s krumpirom u zdjeli" loading="lazy" width="760" height="507"><figcaption>Kuhano po starom</figcaption></figure>
+      <figure data-reveal><img src="https://images.unsplash.com/photo-1666475877607-ec1cec593b19?auto=format&fit=crop&w=760&q=70" alt="Kruh, nož i masline na tamnoj drvenoj dasci" loading="lazy" width="760" height="760"><figcaption>Prije jela</figcaption></figure>
+      <figure data-reveal><img src="https://images.unsplash.com/photo-1686991439066-d089d7b641f7?auto=format&fit=crop&w=760&q=70" alt="Jedrilica na mirnom moru ispred vodičkog otočja u suton" loading="lazy" width="760" height="900"><figcaption>Predvečer, s terase</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="divider wrap"><svg class="vodica" style="width:40px;height:40px"><use href="#vodica"/></svg></div>
+
+<!-- ================= REZERVACIJA + KONTAKT ================= -->
+<section class="section section--alt" id="rezervacija">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow">Rezervacije</span>
+      <h2 data-split>Javite se, čuvamo vam mjesto</h2>
+      <p>Ljeti se stolovi pod borom brzo popune. Najbrže ćete do stola telefonom; ako vam je lakše pisati, pošaljite upit i javljamo se isti dan.</p>
+    </div>
+    <div class="res-grid" id="kontakt">
+      <div class="res-card">
+        <h3>Nazovite ili poručite</h3>
+        <ul class="contact-list">
+          <li><span class="k">Telefon</span><span class="v"><a href="tel:+38598810622">+385 98 810 622</a></span></li>
+          <li><span class="k">E-mail</span><span class="v"><a href="mailto:rezervacije@konoba-roki.hr?subject=Rezervacija%20stola%20—%20Konoba%20Roki">rezervacije@konoba-roki.hr</a><!-- TODO[klijent]: potvrditi ili zamijeniti stvarnom e-mail adresom --></span></li>
+          <li><span class="k">Mjesto</span><span class="v">Vodice, Šibensko-kninska županija<!-- TODO[klijent]: dopuniti ulicom i kućnim brojem --></span></li>
+        </ul>
+        <a class="btn" href="tel:+38598810622" style="width:100%;justify-content:center">Nazovi odmah</a>
+        <p style="font-size:13px;color:var(--pine-soft);margin:14px 0 0">Za društva veća od osam osoba i za jela ispod peke javite se dan ranije.</p>
+      </div>
+      <div class="res-card">
+        <h3>Pošaljite upit</h3>
+        <form id="resform" novalidate>
+          <div class="field"><label for="ime">Ime i prezime</label><input id="ime" name="ime" type="text" autocomplete="name" required aria-required="true" placeholder="npr. Ana Marić"></div>
+          <div class="field two">
+            <div><label for="datum">Datum</label><input id="datum" name="datum" type="date" required aria-required="true"></div>
+            <div><label for="vrijeme">Vrijeme</label>
+              <select id="vrijeme" name="vrijeme">
+                <option value="19:00">19:00</option><option value="19:30">19:30</option>
+                <option value="20:00" selected>20:00</option><option value="20:30">20:30</option>
+                <option value="21:00">21:00</option><option value="21:30">21:30</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="osobe">Broj gostiju</label>
+            <select id="osobe" name="osobe">
+              <option>2 osobe</option><option>3–4 osobe</option><option>5–6 osoba</option><option>7+ (najavite ranije)</option>
+            </select>
+          </div>
+          <div class="field"><label for="poruka">Poruka (nije obavezno)</label><textarea id="poruka" name="poruka" rows="3" placeholder="Alergije, stol pod borom, proslava…"></textarea></div>
+          <button class="btn" type="submit" style="width:100%;justify-content:center">Pošalji upit e-mailom</button>
+          <p class="form-status" id="resstatus" role="status" aria-live="polite" hidden></p>
+          <p class="form-hint">Otvorit će se vaš e-mail s ispunjenom porukom, samo je pošaljite. Ne prikupljamo podatke na stranici.</p>
+        </form>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(34px,5vw,60px)" class="res-grid">
+      <div>
+        <span class="eyebrow">Radno vrijeme</span>
+        <ul class="hours" style="margin-top:16px">
+          <li><span>Ponedjeljak – Petak</span><span>12:00 – 24:00</span></li>
+          <li><span>Subota – Nedjelja</span><span>12:00 – 24:00</span></li>
+          <li><span>Sezona</span><span>svibanj – listopad</span></li>
+        </ul>
+        <p style="font-size:12.5px;color:var(--pine-soft);margin-top:12px"><!-- TODO[klijent]: potvrditi radno vrijeme i sezonske dane -->Radno vrijeme i sezonu potvrdite prije dolaska izvan ljetnih mjeseci.</p>
+      </div>
+      <div>
+        <span class="eyebrow">Kako do nas</span>
+        <div class="map-embed" style="margin-top:16px">
+          <iframe
+            src="https://www.google.com/maps?q=Konoba+Roki,+Vodice,+Hrvatska&output=embed"
+            width="100%" height="300" style="border:0" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokacija — Konoba Roki, Vodice"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand-line"><svg class="vodica" style="width:36px;height:36px"><use href="#vodica"/></svg>
+          <span style="font-family:var(--font-display);font-size:24px;color:var(--paper)">Konoba Roki</span></div>
+        <p class="muted">Riba s gradela, brudet i domaći crni. Obiteljski stol nad morem, u sjeni bora. Vodice, Dalmacija.</p>
+      </div>
+      <div>
+        <div class="foot-eyebrow">Kontakt</div>
+        <ul>
+          <li><a href="tel:+38598810622">+385 98 810 622</a></li>
+          <li><a href="mailto:rezervacije@konoba-roki.hr">rezervacije@konoba-roki.hr</a></li>
+          <li>Vodice, Hrvatska</li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-eyebrow">Poveznice</div>
+        <ul>
+          <li><a href="#jelovnik">Jelovnik</a></li>
+          <li><a href="#prica">Naša priča</a></li>
+          <li><a href="#rezervacija">Rezervacije</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© <span id="yr">2026</span> Konoba Roki, Vodice. Sva prava pridržana.</span>
+      <span>Dobrodošli za naš stol.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var yr = document.getElementById('yr'); if(yr) yr.textContent = new Date().getFullYear();
+
+  // ---- header solid on scroll + hide-less ----
+  var hdr = document.getElementById('hdr');
+  function onScroll(){ hdr.classList.toggle('solid', window.scrollY > 60); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ---- mobilni izbornik ----
+  var tog = document.getElementById('mtog'), nav = document.getElementById('nav');
+  tog.addEventListener('click', function(){
+    var open = nav.classList.toggle('open'); tog.classList.toggle('x', open);
+    tog.setAttribute('aria-expanded', open); document.body.style.overflow = open?'hidden':'';
+  });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){
+    nav.classList.remove('open'); tog.classList.remove('x'); document.body.style.overflow='';
+  });});
+
+  // ---- rezervacijska forma -> mailto (keyless, bez backenda) ----
+  var form = document.getElementById('resform');
+  if(form) form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var g = function(id){ return (document.getElementById(id)||{}).value || ''; };
+    var status = document.getElementById('resstatus');
+    var ime = document.getElementById('ime'), datum = document.getElementById('datum');
+    // ---- validacija (error prevention) ----
+    var miss = [];
+    [['ime',ime,'ime'],['datum',datum,'datum dolaska']].forEach(function(f){
+      var ok = f[1].value.trim() !== '';
+      f[1].setAttribute('aria-invalid', ok ? 'false' : 'true');
+      if(!ok) miss.push(f[2]);
+    });
+    if(miss.length){
+      status.hidden = false; status.className = 'form-status err';
+      status.textContent = 'Molimo upišite '+miss.join(' i ')+' pa ponovite.';
+      (miss[0]==='ime'?ime:datum).focus(); return;
+    }
+    var body = 'Ime: '+g('ime')+'\nDatum: '+g('datum')+'\nVrijeme: '+g('vrijeme')
+      +'\nBroj gostiju: '+g('osobe')+'\nPoruka: '+g('poruka');
+    // ---- success + fallback (error recovery: mailto nikad slijepa ulica) ----
+    status.hidden = false; status.className = 'form-status ok';
+    status.innerHTML = 'Hvala! Otvorili smo vaš e-mail s ispunjenom porukom — samo je pošaljite. '
+      + 'Ako se ništa nije otvorilo, nazovite <a href="tel:+38598810622">+385 98 810 622</a> '
+      + 'ili pišite na <a href="mailto:rezervacije@konoba-roki.hr">rezervacije@konoba-roki.hr</a>.';
+    window.location.href = 'mailto:rezervacije@konoba-roki.hr?subject='
+      + encodeURIComponent('Rezervacija stola — Konoba Roki')
+      + '&body=' + encodeURIComponent(body);
+  });
+
+  // ---- reveal robusnost: safety otkriva sve i bez GSAP-a ----
+  function revealAll(){
+    document.querySelectorAll('[data-reveal]').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('.divider').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('[data-split] .wl').forEach(function(w){ w.style.opacity=1; w.style.transform='none'; });
+  }
+  var safety = setTimeout(revealAll, 2200);
+
+  if(reduce || !window.gsap){ revealAll(); return; }
+  var gsap = window.gsap;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ---- Lenis smooth scroll (scroll-fix: lerp 0.2) ----
+  if(window.Lenis){
+    var lenis = new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
+    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
+    lenis.on('scroll', ScrollTrigger.update);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id = a.getAttribute('href'); if(id.length<2) return;
+        var t = document.querySelector(id); if(!t) return;
+        e.preventDefault(); lenis.scrollTo(t, {offset:-72});
+      });
+    });
+  }
+
+  // ---- split naslovi u riječi ----
+  document.querySelectorAll('[data-split]').forEach(function(el){
+    var words = el.textContent.trim().split(/\s+/);
+    el.innerHTML = words.map(function(w){
+      return '<span style="display:inline-block;overflow:hidden;vertical-align:top">'
+        + '<span class="wl" style="display:inline-block;will-change:transform">'+w+'</span></span>';
+    }).join(' ');
+    gsap.to(el.querySelectorAll('.wl'), {
+      yPercent:0, opacity:1, duration:.7, stagger:.06, ease:'power3.out',
+      onStart:function(){ el.querySelectorAll('.wl').forEach(function(w){ w.style.opacity=1; }); },
+      scrollTrigger:{trigger:el, start:'top 86%'}
+    });
+    gsap.set(el.querySelectorAll('.wl'), {yPercent:110});
+  });
+
+  // ---- sekcijski fade+translate (non-scrub) ----
+  gsap.utils.toArray('[data-reveal]').forEach(function(el){
+    ScrollTrigger.create({trigger:el, start:'top 88%', once:true,
+      onEnter:function(){ el.classList.add('in'); }});
+  });
+  // ---- vodica divideri (stroke draw) ----
+  gsap.utils.toArray('.divider').forEach(function(el){
+    ScrollTrigger.create({trigger:el, start:'top 90%', once:true,
+      onEnter:function(){ el.classList.add('in'); }});
+  });
+
+  ScrollTrigger.refresh();
+  clearTimeout(safety); setTimeout(revealAll, 2600); // krajnja sigurnost ako neki trigger promakne
+})();
+</script>
+</body>
+</html>
