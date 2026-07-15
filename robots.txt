@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://artme-nx.github.io/konoba-roki-v5/sitemap.xml
